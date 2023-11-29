@@ -1,7 +1,3 @@
-/* That´s a code template with some macros and functions for make it easier to code */
-
-/* Currently, I´m trying to maintain this template short as possible for in-person contests */
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -34,6 +30,28 @@ typedef set<int> si;
 typedef set<char> sc;
 
 int main() { _
+
+    ll n; cin >> n;
+
+    vector<pii> v(n);
+
+    ll l, r;
+
+    inc_for(0, n) {
+        cin >> l >> r;
+        v[i] = mk(l, r);
+    }
+
+    int ans = 0, end = -1;
+
+    inc_for(0, n) {
+        if(v[i].f > end) {
+            end = v[i].s;
+            ans++;
+        }
+    }
+
+    cout << ans << endl;
 
     return 0;
 }

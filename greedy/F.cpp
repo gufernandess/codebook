@@ -1,7 +1,3 @@
-/* That´s a code template with some macros and functions for make it easier to code */
-
-/* Currently, I´m trying to maintain this template short as possible for in-person contests */
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -34,6 +30,24 @@ typedef set<int> si;
 typedef set<char> sc;
 
 int main() { _
+
+    ll n; cin >> n;
+
+    vi fat(11);
+
+    fat[0] = 1;
+
+    inc_for(1, 11) fat[i] = fat[i - 1] * i; // Store all factorial smaller than or equal 10⁵
+
+    int count = 0;
+
+    dec_for(10, 0) {
+        int at = n/fat[i]; // Verify if fat[i] can be a local solution
+        count += at;
+        n -= fat[i] * at;
+    }
+
+    cout << count << endl;
 
     return 0;
 }
