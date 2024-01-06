@@ -23,17 +23,22 @@ typedef map<int, int> mii;
 int main() {
   _
 
-      ll n;
+      long long n;
   cin >> n;
-  ll sum = (n * (n + 1)) / 2;
-  ll val = 0, aux = 0;
 
-  for (int i = 0; i < n - 1; i++) {
-    cin >> aux;
-    val += aux;
+  long long aux = 0, prev = 1;
+
+  for (long long i = 1; i <= n; i++) {
+    if (i == 1) {
+      cout << 0 << endl;
+    }
+
+    else {
+      cout << ((i * i * ((i * i) - 1)) / 2) - aux << endl;
+      aux = aux + (8 * prev);
+      prev++;
+    }
   }
-
-  cout << sum - val << endl;
 
   return 0;
 }

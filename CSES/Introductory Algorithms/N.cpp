@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 
+#include <algorithm>
+
 using namespace std;
 
 #define _                       \
@@ -23,25 +25,31 @@ typedef map<int, int> mii;
 int main() {
   _
 
-      string s;
-  cin >> s;
-  int ans = -1, aux = 0;
-  char c = s[0];
+      long long t;
+  cin >> t;
 
-  for (int i = 0; i < s.size(); i++) {
-    if (c == s[i]) {
-      aux++;
+  long long x, y;
+
+  for (int i = 0; i < t; i++) {
+    cin >> y >> x;
+
+    long long maxv = max(x, y);
+    long long sqr = (maxv - 1) * (maxv - 1);
+
+    if (maxv % 2 == 0) {
+      if (x > y)
+        cout << sqr + y << endl;
+      else
+        cout << (maxv * maxv) - x + 1 << endl;
     }
 
     else {
-      c = s[i];
-      aux = 1;
+      if (x > y)
+        cout << (maxv * maxv) - y + 1 << endl;
+      else
+        cout << sqr + x << endl;
     }
-
-    if (aux > ans) ans = aux;
   }
-
-  cout << ans << endl;
 
   return 0;
 }

@@ -10,7 +10,15 @@ using namespace std;
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
 
+#define pb push_back
+#define eb emplace_back
+
 #define endl '\n'
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+typedef map<int, int> mii;
 
 int main() {
   _
